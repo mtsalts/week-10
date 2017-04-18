@@ -1,33 +1,25 @@
-var addListButton = document.getElementById("add-list");
-var removeListButton = document.getElementById("remove-list");
+
 var addItemButton = document.getElementById("add-item");
-var removeItemButton = document.getElementById("remove-item");
+var addListButton = document.getElementById("add-list");
 
-addListButton.addEventListener("click", function(){
-	console.log("button clicked");
+var addListPopupDiv = document.getElementById("add-list-popup");
+var addItemPopupDiv = document.getElementById("add-item-popup");
 
-	var addListPopUp = document.getElementById("add-list-popup");
-	addListPopUp.style.display = "flex";
+addListButton.addEventListener("click", function() {
+  addListPopupDiv.style.display = "flex";
 });
 
-removeListButton.addEventListener("click", function(){
-	console.log("x clicked");
-
-	var removeListPopUp = document.getElementById("remove-list");
-	removeListPopUp.style.display = "none";
+addItemButton.addEventListener("click", function() {
+  addItemPopupDiv.style.display = "flex";
 });
 
-addItemButton.addEventListener("click", function(){
-	console.log("button clicked");
+var closeButton = document.querySelectorAll(".close");
+closeButton.forEach(function(button, i) {
 
-	var addItemPopUp = document.getElementById("add-item-popup");
-	addItemPopUp.style.display = "flex";
-});
+  button.addEventListener("click", function() {
+    addListPopupDiv.style.display = "none";
+    addItemPopupDiv.style.display = "none";
+  });
 
-removeItemButton.addEventListener("click", function(){
-	console.log("x clicked");
-
-	var removeItemPopUp = document.getElementById("remove-item");
-	removeItemPopUp.style.display = "none";
 });
 
